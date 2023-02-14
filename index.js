@@ -33,7 +33,9 @@ var app = express();
 app.use(morgan('dev'));
 
 app.get('/', function(req, res) {
-    res.send('Hello World');
+    // instructions for using the api with query params
+    res.send('Use /search?roll=...&name=...&dept=...&year=... to search for students\nAll params are optional');
+
 });
 
 app.get('/search', function(req, res) {
