@@ -10,10 +10,7 @@ const dbName = 'StudentDetails';
 const dbURI = `mongodb+srv://${dbUser}:${dbPass}@${clusterName}/${dbName}`;
 const PORT = 3000;
 
-console.log(dbURI);
-
 mongoose.set('strictQuery', false);
-
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
         app.listen(PORT);
