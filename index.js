@@ -45,6 +45,12 @@ app.get('/student', function(req, res) {
         filter.year = req.query.year;
     }
 
+    // return no data if no filter is provided
+    if (Object.keys(filter).length === 0) {
+        res.status(400).send('No Filter Provided');
+        return;
+    }
+
     // find data from db, also handle if no data found
     Data.find(filter, function(err, data) {
         if (err) {
