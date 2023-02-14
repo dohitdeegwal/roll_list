@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 const express = require('express');
 const morgan = require('morgan');
+var Schema = mongoose.Schema;
 
 const dbUser = process.env.atlasUser;
 const dbPass = process.env.atlasPassword;
@@ -9,9 +10,12 @@ const dbName = 'StudentDetails';
 const dbURI = `mongodb+srv://${dbUser}:${dbPass}@${clusterName}/${dbName}?retryWrites=true&w=majority`;
 const PORT = 3000;
 
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
-
-var Schema = mongoose.Schema;
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then((result) => {
+        app.listen(PORT);
+        console.log(`Server running on port ${PORT}`);
+    })
+    .catch((err) => console.log(err));
 
 var studentSchema = new Schema({
     roll: Number,
@@ -21,7 +25,7 @@ var studentSchema = new Schema({
 
 });
 
-var Data = mongoose.model('Student', studentSchema);
+var Student = mongoose.model('Student', studentSchema);
 
 var app = express();
 
@@ -55,7 +59,7 @@ app.get('/student', function(req, res) {
     }
 
     // find data from db, also handle if no data found
-    Data.find(filter, function(err, data) {
+    Student.find(filter, function(err, data) {
         if (err) {
             res.status(500).send('Error in DB');
             return;
@@ -70,7 +74,7 @@ app.get('/student', function(req, res) {
 
 });
 
-app.listen(PORT, function() {
-    console.log(`Server is running on port ${PORT}`);
+// 404 page
+app.use(function(req, res) {
+    res.status(404).send('404: Page not Found');
 });
-
