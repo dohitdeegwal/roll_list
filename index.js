@@ -39,7 +39,7 @@ app.get('/', function(req, res) {
     res.send('OK');
 });
 
-app.get('/student', function(req, res) {
+app.get('/search', function(req, res) {
 
     // filter data by query params (if any) through regex for name and dept, and exact match for roll and year
     var filter = {};
