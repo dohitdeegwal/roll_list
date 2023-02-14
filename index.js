@@ -7,8 +7,12 @@ const dbUser = process.env.atlasUser;
 const dbPass = process.env.atlasPassword;
 const clusterName = process.env.atlasClusterName;
 const dbName = 'StudentDetails';
-const dbURI = `mongodb+srv://${dbUser}:${dbPass}@${clusterName}/${dbName}?retryWrites=true&w=majority`;
+const dbURI = `mongodb+srv://${dbUser}:${dbPass}@${clusterName}/${dbName}`;
 const PORT = 3000;
+
+console.log(dbURI);
+
+mongoose.set('strictQuery', false);
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => {
