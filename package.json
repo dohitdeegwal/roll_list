@@ -1,0 +1,24 @@
+{
+  "name": "roll-list",
+  "version": "2.0.0",
+  "description": "Get student details of NITJ Students",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dohitdeegwal/roll_list.git"
+  },
+  "author": "Dohit Deegwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dohitdeegwal/roll_list/issues"
+  },
+  "homepage": "https://github.com/dohitdeegwal/roll_list#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.9.1",
+    "morgan": "^1.10.0"
+  }
+}
