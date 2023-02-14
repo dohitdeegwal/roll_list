@@ -32,7 +32,7 @@ var app = express();
 app.use(morgan('dev'));
 
 app.get('/', function(req, res) {
-    res.send('Hello World');
+    res.send('OK');
 });
 
 app.get('/student', function(req, res) {
