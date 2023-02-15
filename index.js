@@ -76,7 +76,19 @@ app.get('/search', function(req, res) {
             res.status(404).send('No Data Found');
             return;
         }
-        res.send(data);
+
+        // send data as HTML table
+        var html = '<table><tr><th>Roll</th><th>Name</th><th>Dept</th><th>Year</th></tr>';
+        data.forEach(function(student) {
+            html += '<tr>';
+            html += '<td>' + student.roll + '</td>';
+            html += '<td>' + student.name + '</td>';
+            html += '<td>' + student.dept + '</td>';
+            html += '<td>' + student.year + '</td>';
+            html += '</tr>';
+        });
+        html += '</table>';
+        res.send(html);
     });
 
 
