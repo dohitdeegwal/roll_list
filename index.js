@@ -32,6 +32,11 @@ var app = express();
 
 app.use(morgan('dev'));
 
+// health check
+app.get('/health', function(req, res) {
+    res.send('OK');
+});
+
 app.get('/', function(req, res) {
     // instructions for using the api with query params
     res.send('Use /search?roll=...&name=...&dept=...&year=... to search for students\nAll params are optional');
