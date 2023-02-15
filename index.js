@@ -39,7 +39,7 @@ app.get('/health', function(req, res) {
 
 app.get('/', function(req, res) {
     // instructions for using the api with query params
-    res.send('Use /search?roll=...&name=...&dept=...&year=... to search for students\nAll params are optional');
+    res.send('Use /search?roll=...&name=...&dept=...&year=... to search for students.<br>All params are optional');
 
 });
 
