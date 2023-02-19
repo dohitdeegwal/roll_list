@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Search</title>
+        <style>
+            /* Styles for desktop devices */
+            @media screen and (min-width: 768px) {
+                /* Adjust the form layout for desktop devices */
+                label {
+                    display: inline-block;
+                    width: 80px;
+                    text-align: right;
+                    margin-right: 10px;
+                }
+                input[type="number"],
+                input[type="text"],
+                input[type="submit"] {
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+                input[type="submit"] {
+                    background-color: #4CAF50;
+                    color: white;
+                    cursor: pointer;
+                }
+                input[type="submit"]:hover {
+                    background-color: #3e8e41;
+                }
+            }
+            /* Styles for mobile devices */
+            @media screen and (max-width: 767px) {
+                /* Adjust the form layout for mobile devices */
+                label {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+                input[type="number"],
+                input[type="text"],
+                input[type="submit"] {
+                    display: block;
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    font-size: 16px;
+                    margin-bottom: 10px;
+                }
+                input[type="submit"] {
+                    background-color: #4CAF50;
+                    color: white;
+                    cursor: pointer;
+                }
+                input[type="submit"]:hover {
+                    background-color: #3e8e41;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Search</h1>
+        <form action="/search" method="GET">
+            <label for="roll">Roll</label><input type="number" name="roll" id="roll" placeholder="Enter Roll Number" />
+            <label for="name">Name</label><input type="text" name="name" id="name" placeholder="Enter Name" />
+            <label for="dept">Dept</label><input type="text" name="dept" id="dept" placeholder="Enter Dept" />
+            <label for="year">Year</label><input type="number" name="year" id="year" placeholder="Enter Year" />
+            <input type="submit" value="Search" />
+        </form>
+    </body>
+</html>

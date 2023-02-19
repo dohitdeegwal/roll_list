@@ -31,6 +31,8 @@ var Student = mongoose.model('Student', studentSchema);
 var app = express();
 
 app.use(morgan('dev'));
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
 
 // health check
 app.get('/health', function(req, res) {
@@ -38,19 +40,7 @@ app.get('/health', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-    // instructions for using the api with query params and a buton to go to /search
-    var html = '<h1>Instructions</h1>';
-    html += '<p>Use the following query params to filter data:</p>';
-    html += '<ul>';
-    html += '<li>roll</li>';
-    html += '<li>name</li>';
-    html += '<li>dept</li>';
-    html += '<li>year</li>';
-    html += '</ul>';
-    html += '<p>Example: <a href="/search?roll=20124029">/search?roll=20124029</a></p>';
-    html += '<p><a href="/search">Go to Search</a></p>';
-    res.send(html);
-
+    res.render('index.ejs');
 });
 
 app.get('/search', function(req, res) {
