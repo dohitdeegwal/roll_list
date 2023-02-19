@@ -1,88 +1,65 @@
 /* Dark Theme */
 :root {
-    --bg-color: #1e1e1e;
-    --text-color: #ffffff;
-    --form-bg-color: #2d2d2d;
-    --table-bg-color: #252525;
-    --table-text-color: #ffffff;
-  }
-  
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-    color: var(--text-color);
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--form-bg-color);
-    color: var(--text-color);
-  }
-  
-  input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: var(--table-bg-color);
-  }
-  
-  th {
-    text-align: left;
-    background-color: #4CAF50;
-    color: var(--table-text-color);
-    padding: 10px;
-  }
-  
-  th,
-  td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    color: var(--table-text-color);
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  @media (min-width: 768px) {
-    label {
-      display: inline-block;
-      width: 100px;
-      text-align: right;
-      margin-right: 10px;
-    }
-    input[type="text"],
-    input[type="number"] {
-      width: 200px;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    input[type="text"],
-    input[type="number"] {
-      width: 300px;
-    }
-  }
-  
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --form-bg-color: #2d2d2d;
+  --table-bg-color: #252525;
+  --table-text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--form-bg-color);
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: var(--table-bg-color);
+}
+
+th {
+  text-align: left;
+  background-color: #4CAF50;
+  color: var(--table-text-color);
+  padding: 10px;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: var(--table-text-color);
+}
