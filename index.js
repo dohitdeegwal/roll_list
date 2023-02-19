@@ -40,12 +40,12 @@ app.get('/health', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-    res.render('index.ejs');
+    res.render('index');
 });
 
 app.get('/search', function(req, res) {
 
-    // filter data by query params (if any) through regex for name and dept, and exact match for roll and year
+    // filter data by query params (if any) through regex for name and dept and roll, and exact match for year
     var filter = {};
     if (req.query.roll) {
         filter.roll = req.query.roll;
@@ -67,32 +67,22 @@ app.get('/search', function(req, res) {
     }
 
     // find data from db, also handle if no data found
-    Student.find(filter, function(err, data) {
+    Student.find(filter, function(err, students) {
         if (err) {
             res.status(500).send('Error in DB');
             return;
         }
-        if (data.length === 0) {
+        if (students.length === 0) {
             res.status(404).send('No Data Found');
             return;
         }
 
-        // send data as HTML table
-        var html = '<table><tr><th>Roll</th><th>Name</th><th>Dept</th><th>Year</th></tr>';
-        data.forEach(function(student) {
-            html += '<tr>';
-            html += '<td>' + student.roll + '</td>';
-            html += '<td>' + student.name + '</td>';
-            html += '<td>' + student.dept + '</td>';
-            html += '<td>' + student.year + '</td>';
-            html += '</tr>';
-        });
-        html += '</table>';
-        res.send(html);
+        res.render('search', { students: students });
     });
 
 
 });
+
 
 // 404 page
 app.use(function(req, res) {

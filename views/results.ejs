@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student List</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            th {
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px;
+            }
+            th, td {
+                border: 1px solid #ccc;
+                padding: 10px;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Student List</h1>
+        <table>
+            <tr>
+                <th>Roll</th>
+                <th>Name</th>
+                <th>Dept</th>
+                <th>Year</th>
+            </tr>
+            <% data.forEach(function(student) { %>
+                <tr>
+                    <td><%= student.roll %></td>
+                    <td><%= student.name %></td>
+                    <td><%= student.dept %></td>
+                    <td><%= student.year %></td>
+                </tr>
+            <% }); %>
+        </table>
+    </body>
+</html>

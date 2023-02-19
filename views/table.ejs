@@ -1,0 +1,16 @@
+<table>
+    <thead>
+      <tr>
+        <th>Roll</th>
+        <th>Name</th>
+        <th>Dept</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% students.forEach(function(student) { %>
+        <%- include('partials/student_row', { student: student }) %>
+      <% }); %>
+    </tbody>
+  </table>
+  
