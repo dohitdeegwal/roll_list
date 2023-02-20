@@ -10,8 +10,22 @@
     <form action="/search" method="GET">
         <label for="roll">Roll</label><input type="number" name="roll" id="roll" placeholder="Enter Roll Number" />
         <label for="name">Name</label><input type="text" name="name" id="name" placeholder="Enter Name" />
-        <label for="dept">Dept</label><input type="text" name="dept" id="dept" placeholder="Enter Dept" />
-        <label for="year">Year</label><input type="number" name="year" id="year" placeholder="Enter Year" />
+        <label for="dept">Department</label>
+        <select name="dept" id="dept">
+        <option value="">Select Department</option>
+        <option value="Bio Technology">Bio Technology</option>
+        <option value="Chemical Engineering">Chemical Engineering</option>
+        <option value="Civil Engineering">Civil Engineering</option>
+        <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+        <option value="Electrical Engineering">Electrical Engineering</option>
+        <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+        <option value="Industrial and Production Engineering">Industrial and Production Engineering</option>
+        <option value="Information Technology">Information Technology</option>
+        <option value="Instrumentation and Control Engineering">Instrumentation and Control Engineering</option>
+        <option value="Mechanical Engineering">Mechanical Engineering</option>
+        <option value="Textile Technology">Textile Technology</option>
+        </select>
+        <label for="year">Year of Admission</label><input type="number" name="year" id="year" placeholder="Enter Year" />
         <input type="submit" value="Search" />
     </form>
 </body>
