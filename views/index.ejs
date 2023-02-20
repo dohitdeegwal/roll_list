@@ -11,10 +11,12 @@
   <body>
     <h1>Search</h1>
     <form action="/search" method="GET">
-      <label for="roll">Roll</label>
+      <label for="roll">Roll Number</label>
       <input type="number" name="roll" id="roll" placeholder="Enter Roll Number" />
-      <label for="name">Name</label>
+      <label for="name">Name of Student</label>
       <input type="text" name="name" id="name" placeholder="Enter Name" />
+      <label for="year">Year of Admission</label>
+      <input type="number" name="year" id="year" placeholder="Enter Year" />
       <label for="dept">Department</label>
       <select name="dept" id="dept">
         <option value="">Select Department</option>
@@ -30,8 +32,6 @@
         <option value="Mechanical Engineering">Mechanical Engineering</option>
         <option value="Textile Technology">Textile Technology</option>
       </select>
-      <label for="year">Year of Admission</label>
-      <input type="number" name="year" id="year" placeholder="Enter Year" />
       <input type="submit" value="Search" />
     </form>
   </body>
