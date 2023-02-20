@@ -1,17 +1,20 @@
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Student List</title>
     <link rel="stylesheet" href="/styles.css">
-</head>
-
-<%- include('./partials/header') %>
-
-<body>
+  </head>
+  
+  <%- include('./partials/header') %>
+  
+  <body>
     <h1>Search</h1>
     <form action="/search" method="GET">
-        <label for="roll">Roll</label><input type="number" name="roll" id="roll" placeholder="Enter Roll Number" />
-        <label for="name">Name</label><input type="text" name="name" id="name" placeholder="Enter Name" />
-        <label for="dept">Department</label>
-        <select name="dept" id="dept">
+      <label for="roll">Roll</label>
+      <input type="number" name="roll" id="roll" placeholder="Enter Roll Number" />
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" placeholder="Enter Name" />
+      <label for="dept">Department</label>
+      <select name="dept" id="dept">
         <option value="">Select Department</option>
         <option value="Bio Technology">Bio Technology</option>
         <option value="Chemical Engineering">Chemical Engineering</option>
@@ -24,10 +27,12 @@
         <option value="Instrumentation and Control Engineering">Instrumentation and Control Engineering</option>
         <option value="Mechanical Engineering">Mechanical Engineering</option>
         <option value="Textile Technology">Textile Technology</option>
-        </select>
-        <label for="year">Year of Admission</label><input type="number" name="year" id="year" placeholder="Enter Year" />
-        <input type="submit" value="Search" />
+      </select>
+      <label for="year">Year of Admission</label>
+      <input type="number" name="year" id="year" placeholder="Enter Year" />
+      <input type="submit" value="Search" />
     </form>
-</body>
-
-<%- include('./partials/footer') %>
+  </body>
+  
+  <%- include('./partials/footer') %>
+  
