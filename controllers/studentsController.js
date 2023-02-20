@@ -3,7 +3,7 @@ const Student = require('../models/student.js');
 const searchStudents = (req, res) => {
 
     // filter data by query params (if any) through regex for name and dept and roll, and exact match for year
-    var filter = {};
+    const filter = {};
     if (req.query.roll) {
         filter.roll = req.query.roll;
     }
@@ -24,7 +24,7 @@ const searchStudents = (req, res) => {
     }
 
     // find data from db, also handle if no data found
-    Student.find(filter, function(err, students) {
+    Student.find(filter).sort({ roll: 1 }).exec((err, students) => {
         if (err) {
             console.log(err);
             res.status(500).render('error', { message: 'Internal Server Error' });
@@ -36,7 +36,7 @@ const searchStudents = (req, res) => {
         }
 
         res.render('search', { students: students });
-    }).sort({ roll: 1 });
+    });
 };
 
 module.exports = {

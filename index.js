@@ -16,7 +16,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
         app.listen(PORT);
         console.log(`Server running on port ${PORT}`);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+        console.log(err);
+    });
 
 var app = express();
 
