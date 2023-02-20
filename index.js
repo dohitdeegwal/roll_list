@@ -79,7 +79,7 @@ app.get('/search', function(req, res) {
         }
 
         res.render('search', { students: students });
-    });
+    }).sort({ roll: 1 });
 
 
 });
