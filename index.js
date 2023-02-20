@@ -62,18 +62,19 @@ app.get('/search', function(req, res) {
 
     // return no data if no filter is provided
     if (Object.keys(filter).length === 0) {
-        res.status(400).send('No Filter Provided');
+        res.status(400).render('error', { message: 'No filter provided' });
         return;
     }
 
     // find data from db, also handle if no data found
     Student.find(filter, function(err, students) {
         if (err) {
-            res.status(500).send('Error in DB');
+            console.log(err);
+            res.status(500).render('error', { message: 'Internal Server Error' });
             return;
         }
         if (students.length === 0) {
-            res.status(404).send('No Data Found');
+            res.status(404).render('error', { message: 'No data found' });
             return;
         }
 
@@ -86,5 +87,5 @@ app.get('/search', function(req, res) {
 
 // 404 page
 app.use(function(req, res) {
-    res.status(404).send('404: Page not Found');
+    res.status(404).render('error', { message: 'Page Not Found' });
 });
