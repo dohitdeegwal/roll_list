@@ -4,33 +4,34 @@
   --form-bg-color: #2d2d2d;
   --table-bg-color: #252525;
   --table-text-color: #ffffff;
-}
-
-body {
+  --active-input-bg-color: #444444;
+  }
+  
+  body {
   background-color: var(--bg-color);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-h1, p {
+  }
+  
+  h1, p {
   text-align: center;
-}
-
-h1 {
+  }
+  
+  h1 {
   margin-top: 50px;
   margin-bottom: 20px;
-}
-
-p {
+  }
+  
+  p {
   font-size: 18px;
   margin-bottom: 50px;
-}
-
-/* Form Styling */
-
-form {
+  }
+  
+  /* Form Styling */
+  
+  form {
   width: 90%;
   max-width: 600px;
   display: flex;
@@ -41,17 +42,17 @@ form {
   padding: 20px;
   border-radius: 10px;
   background-color: var(--form-bg-color);
-}
-
-label {
+  }
+  
+  label {
   display: block;
   margin-bottom: 10px;
   color: var(--text-color);
-}
-
-input[type="text"],
-input[type="number"],
-select {
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
   width: 100%;
   max-width: 400px;
   padding: 10px;
@@ -61,58 +62,85 @@ select {
   color: var(--text-color);
   display: block;
   margin-bottom: 10px;
-}
-
-input[type="submit"] {
+  transition: background-color 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus {
+  outline: none;
+  background-color: var(--active-input-bg-color);
+  }
+  
+  input[type="text"]:hover,
+  input[type="number"]:hover,
+  select:hover {
+  background-color: #444444;
+  }
+  
+  input[type="submit"] {
   background-color: #4CAF50;
   color: white;
   border-radius: 5px;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-}
-
-input[type="submit"]:hover {
+  }
+  
+  input[type="submit"]:hover {
   background-color: #3e8e41;
-}
-
-/* Table Styling */
-
-table {
+  }
+  
+  /* Table Styling */
+  
+  table {
   width: 90%;
   max-width: 800px;
   border-collapse: collapse;
   margin-bottom: 20px;
   background-color: var(--table-bg-color);
-}
-
-th {
+  }
+  
+  th {
   text-align: left;
   background-color: #4CAF50;
   color: var(--table-text-color);
   padding: 10px;
-}
-
-th,
-td {
+  }
+  
+  th,
+  td {
   border: 1px solid #ccc;
   padding: 10px;
   color: var(--table-text-color);
-}
-
-/* Header/Footer Styling */
-
-.header,
-.footer {
+  }
+  
+  /* Header/Footer Styling */
+  
+  .header,
+  .footer {
   background-color: var(--table-bg-color);
   color: var(--text-color);
   width: 100%;
   padding: 10px;
   position: fixed;
   bottom: 0;
-}
-
-.footer {
+  }
+  
+  .footer {
   bottom: unset;
   top: 0;
-}
+  }
+  
+  /* Responsive Design */
+  
+  @media only screen and (max-width: 600px) {
+  form {
+  width: 100%;
+  padding: 10px;
+  }
+  
+  input[type="submit"] {
+  font-size: 16px;
+  }
+  }
