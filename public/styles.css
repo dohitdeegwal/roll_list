@@ -1,10 +1,10 @@
 :root {
-  --bg-color: #f5f5f5;
-  --text-color: #333333;
-  --form-bg-color: #ffffff;
-  --table-bg-color: #f5f5f5;
-  --table-text-color: #333333;
-  --active-input-bg-color: #dddddd;
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --form-bg-color: #2d2d2d;
+  --table-bg-color: #252525;
+  --table-text-color: #ffffff;
+  --active-input-bg-color: #444444;
 }
 
 body {
@@ -15,8 +15,7 @@ body {
   align-items: center;
 }
 
-h1,
-p {
+h1, p {
   text-align: center;
 }
 
@@ -44,7 +43,7 @@ form {
   padding: 20px;
   border-radius: 10px;
   background-color: var(--form-bg-color);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
 }
 
 label {
@@ -60,7 +59,7 @@ select {
   max-width: 400px;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #cccccc;
+  border: none;
   background-color: var(--form-bg-color);
   color: var(--text-color);
   display: block;
@@ -79,7 +78,7 @@ select:focus {
 input[type="text"]:hover,
 input[type="number"]:hover,
 select:hover {
-  background-color: #f1f1f1;
+  background-color: #444444;
 }
 
 input[type="submit"] {
@@ -113,45 +112,45 @@ th {
   padding: 10px;
 }
 
-th,
-td {
-  border: 1px solid #cccccc;
+th, td {
+  border: 1px solid #ccc;
   padding: 10px;
   color: var(--table-text-color);
 }
 
 tr:hover {
-  background-color: #dddddd;
-  color: #333333;
+  background-color: #555;
+  color: #fff;
 }
 
 /* Header/Footer Styling */
 
 .header,
 .footer {
-  background-color: var(--table-bg-color);
-  color: var(--text-color);
-  width: 100%;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  font-size: 16px;
+background-color: var(--table-bg-color);
+color: var(--text-color);
+width: 100%;
+padding: 10px;
+position: fixed;
+bottom: 0;
+font-size: 16px;
 }
 
 .footer {
-  bottom: unset;
-  top: 0;
+bottom: unset;
+top: 0;
 }
 
 /* Responsive Design */
 
 @media only screen and (max-width: 600px) {
-  form {
-    width: 100%;
-    padding: 10px;
-  }
+form {
+width: 90%;
+max-width: 600px;
+padding: 20px;
+}
 
-  input[type="submit"] {
-    font-size: 16px;
-  }
+input[type="submit"] {
+font-size: 18px;
+}
 }
