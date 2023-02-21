@@ -1,37 +1,39 @@
 :root {
-  --bg-color: #1e1e1e;
-  --text-color: #ffffff;
-  --form-bg-color: #2d2d2d;
-  --table-bg-color: #252525;
-  --table-text-color: #ffffff;
-  --active-input-bg-color: #444444;
-  }
-  
-  body {
+  --bg-color: #f5f5f5;
+  --text-color: #333333;
+  --form-bg-color: #ffffff;
+  --table-bg-color: #f5f5f5;
+  --table-text-color: #333333;
+  --active-input-bg-color: #dddddd;
+}
+
+body {
   background-color: var(--bg-color);
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  }
-  
-  h1, p {
+}
+
+h1,
+p {
   text-align: center;
-  }
-  
-  h1 {
+}
+
+h1 {
   margin-top: 50px;
   margin-bottom: 20px;
-  }
-  
-  p {
-  font-size: 18px;
+  font-size: 36px;
+}
+
+p {
+  font-size: 20px;
   margin-bottom: 50px;
-  }
-  
-  /* Form Styling */
-  
-  form {
+}
+
+/* Form Styling */
+
+form {
   width: 90%;
   max-width: 600px;
   display: flex;
@@ -42,105 +44,114 @@
   padding: 20px;
   border-radius: 10px;
   background-color: var(--form-bg-color);
-  }
-  
-  label {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+label {
   display: block;
   margin-bottom: 10px;
   color: var(--text-color);
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  select {
+}
+
+input[type="text"],
+input[type="number"],
+select {
   width: 100%;
   max-width: 400px;
   padding: 10px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid #cccccc;
   background-color: var(--form-bg-color);
   color: var(--text-color);
   display: block;
   margin-bottom: 10px;
   transition: background-color 0.3s;
-  }
-  
-  input[type="text"]:focus,
-  input[type="number"]:focus,
-  select:focus {
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
   outline: none;
   background-color: var(--active-input-bg-color);
-  }
-  
-  input[type="text"]:hover,
-  input[type="number"]:hover,
-  select:hover {
-  background-color: #444444;
-  }
-  
-  input[type="submit"] {
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+select:hover {
+  background-color: #f1f1f1;
+}
+
+input[type="submit"] {
   background-color: #4CAF50;
   color: white;
   border-radius: 5px;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
   background-color: #3e8e41;
-  }
-  
-  /* Table Styling */
-  
-  table {
+}
+
+/* Table Styling */
+table {
   width: 90%;
   max-width: 800px;
   border-collapse: collapse;
   margin-bottom: 20px;
   background-color: var(--table-bg-color);
-  }
-  
-  th {
+}
+
+th {
   text-align: left;
   background-color: #4CAF50;
   color: var(--table-text-color);
   padding: 10px;
-  }
-  
-  th,
-  td {
-  border: 1px solid #ccc;
+}
+
+th,
+td {
+  border: 1px solid #cccccc;
   padding: 10px;
   color: var(--table-text-color);
-  }
-  
-  /* Header/Footer Styling */
-  
-  .header,
-  .footer {
+}
+
+tr:hover {
+  background-color: #dddddd;
+  color: #333333;
+}
+
+/* Header/Footer Styling */
+
+.header,
+.footer {
   background-color: var(--table-bg-color);
   color: var(--text-color);
   width: 100%;
   padding: 10px;
   position: fixed;
   bottom: 0;
-  }
-  
-  .footer {
+  font-size: 16px;
+}
+
+.footer {
   bottom: unset;
   top: 0;
-  }
-  
-  /* Responsive Design */
-  
-  @media only screen and (max-width: 600px) {
+}
+
+/* Responsive Design */
+
+@media only screen and (max-width: 600px) {
   form {
-  width: 100%;
-  padding: 10px;
+    width: 100%;
+    padding: 10px;
   }
-  
+
   input[type="submit"] {
-  font-size: 16px;
+    font-size: 16px;
   }
-  }
+}
