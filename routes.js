@@ -3,7 +3,10 @@ const mainRouter = express.Router();
 const studentsController = require('./controllers/studentsController.js');
 
 // main page
-mainRouter.get('/', (req, res) => res.render('index') );
+mainRouter.get('/', (req, res) => res.redirect('/home') );
+
+// home page
+mainRouter.get('/home', studentsController.homePage );
 
 // search page
 mainRouter.get('/search', studentsController.searchStudents);

@@ -1,5 +1,17 @@
 const Student = require('../models/student.js');
 
+const homePage = (req, res) => {
+    // fetch distinct departments from db and render home page
+    Student.distinct('dept').exec((err, depts) => {
+        if (err) {
+            console.log(err);
+            res.status(500).render('error', { message: 'Internal Server Error' });
+            return;
+        }
+        res.render('home', { depts: depts });
+    });
+}
+
 const searchStudents = (req, res) => {
 
     // filter data by query params (if any) through regex for name and dept and roll, and exact match for year
@@ -40,5 +52,6 @@ const searchStudents = (req, res) => {
 };
 
 module.exports = {
-    searchStudents
+    searchStudents,
+    homePage
 };

@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student List</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <%- include('./partials/header') %>
+
+  <body>
+    <h2>Search</h2>
+    <form action="/search" method="GET">
+      <label for="roll">Roll Number</label>
+      <input
+        type="number"
+        name="roll"
+        id="roll"
+        placeholder="Enter Roll Number"
+      />
+      <label for="name">Name of Student</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Enter Name"
+        autocomplete="off"
+      />
+      <label for="year">Year of Admission</label>
+      <input type="number" name="year" id="year" placeholder="Enter Year" />
+      <label for="dept">Department</label>
+      <select name="dept" id="dept">
+        <option value="">Select Department</option>
+        <% depts.forEach((dept) => { %>
+          <option value="<%= dept %>"><%= dept %></option>
+        <% }); %>
+      </select>      
+      <input type="submit" value="Search" />
+    </form>
+  </body>
+
+  <%- include('./partials/footer') %>
+</html>
