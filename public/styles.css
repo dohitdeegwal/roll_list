@@ -23,10 +23,7 @@ p {
 
 h2 {
   margin-top: 100px;
-  /* margin-bottom:  */
   font-size: 36px;
-  /* z-index: 3; */
-  /* float the element*/
   float: right;
 
 }
@@ -142,15 +139,13 @@ footer {
 
 header h1 {
   top: static;
-  /* margin-top: 0; */
 }
 
 footer {
 
   bottom: 0;
   bottom: static;
-  /* margin: 0; */
-  /* top: 0; */
+  margin: 0;
 }
 
 /* Responsive Design */
